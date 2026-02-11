@@ -1,0 +1,369 @@
+/* Brutalist Theme - StyleKit UI Inspired */
+
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-primary: #000000;
+  --color-primary-hover: #1A1A1A;
+  --color-secondary: #FF4500;
+  --color-secondary-hover: #E63E00;
+  --color-accent: #FFFF00;
+  --color-background: #F5F5F0;
+  --color-background-alt: #EAEAE4;
+  --color-surface: #FFFFFF;
+  --color-border: #000000;
+  --color-text: #000000;
+  --color-text-muted: #666666;
+  --color-success: #00AA00;
+  --color-warning: #FFAA00;
+  --color-error: #FF0000;
+
+  /* Shadows (offset, no blur) */
+  --shadow-sm: 2px 2px 0 #000000;
+  --shadow-base: 4px 4px 0 #000000;
+  --shadow-md: 6px 6px 0 #000000;
+  --shadow-lg: 8px 8px 0 #000000;
+  --shadow-glow: 0 0 0 4px #FFFF00;
+
+  /* Typography */
+  --font-primary: "Archivo Black", "Impact", "Arial Black", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", "Courier New", monospace;
+
+  /* Borders */
+  --border-width: 3px;
+  --border-width-heavy: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--color-background);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.app {
+  max-width: 650px;
+  margin: 0 auto;
+  background: var(--color-surface);
+  border: var(--border-width-heavy) solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+
+header {
+  background: var(--color-primary);
+  color: var(--color-surface);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+header h1 {
+  font-size: 2.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+.error {
+  color: var(--color-error);
+  background: var(--color-surface);
+  padding: 2rem;
+  border: var(--border-width) solid var(--color-error);
+  box-shadow: var(--shadow-base);
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+/* Online users */
+.online-users {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-accent);
+  border-bottom: var(--border-width) solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.online-users .label {
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.user-badge {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-surface);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Todo container */
+.todo-container {
+  padding: 1.5rem;
+  background: var(--color-surface);
+}
+
+.add-todo-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  border: var(--border-width) solid var(--color-border);
+  background: var(--color-surface);
+  transition: box-shadow 0ms linear, transform 0ms linear;
+}
+
+.todo-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-base);
+  transform: translate(-2px, -2px);
+}
+
+.todo-input::placeholder {
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+.add-btn {
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-surface);
+  background: var(--color-primary);
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-base);
+  cursor: pointer;
+  transition: box-shadow 0ms linear, transform 0ms linear;
+}
+
+.add-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+  background: var(--color-primary-hover);
+}
+
+.add-btn:active {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Todo actions */
+.todo-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  background: var(--color-background-alt);
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: box-shadow 0ms linear, transform 0ms linear;
+}
+
+.action-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-base);
+}
+
+.action-btn:active:not(:disabled) {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-btn.danger {
+  color: var(--color-surface);
+  background: var(--color-error);
+  border-color: var(--color-border);
+}
+
+.action-btn.danger:hover:not(:disabled) {
+  background: #CC0000;
+}
+
+/* Todo list */
+.todo-list {
+  list-style: none;
+  border: var(--border-width) solid var(--color-border);
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--color-border);
+  background: var(--color-surface);
+  transition: background 0ms linear;
+}
+
+.todo-item:hover {
+  background: var(--color-background);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item.done {
+  background: var(--color-background-alt);
+}
+
+.todo-item.done .todo-text {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+.todo-checkbox {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  position: relative;
+}
+
+.todo-checkbox:checked {
+  background: var(--color-primary);
+}
+
+.todo-checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-surface);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.todo-checkbox:focus {
+  outline: none;
+  box-shadow: var(--shadow-glow);
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1rem;
+  font-family: var(--font-mono);
+}
+
+.todo-author {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-text-muted);
+}
+
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--color-text);
+  background: transparent;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  transition: background 0ms linear, color 0ms linear, box-shadow 0ms linear;
+}
+
+.delete-btn:hover {
+  color: var(--color-surface);
+  background: var(--color-error);
+  box-shadow: var(--shadow-sm);
+}
+
+.delete-btn:active {
+  box-shadow: none;
+}
+
+/* Footer */
+.todo-footer {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: var(--border-width) dashed var(--color-border);
+  background: var(--color-background);
+}

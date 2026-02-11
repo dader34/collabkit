@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "collabkit"
+version = "0.1.0"
+description = "A collaborative toolkit for real-time applications"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "websockets",
+    "asyncpg",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
